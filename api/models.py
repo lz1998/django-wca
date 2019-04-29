@@ -8,8 +8,15 @@
 from django.db import models
 
 
+class KeyValue(models.Model):
+    key = models.CharField(max_length=50,primary_key=True)
+    value = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'key_value'
+
 class Competitions(models.Model):
-    id = models.CharField(max_length=32,primary_key=True)
+    id = models.CharField(max_length=32, primary_key=True)
     name = models.CharField(max_length=50)
     cityname = models.CharField(db_column='cityName', max_length=50)  # Field name made lowercase.
     countryid = models.CharField(db_column='countryId', max_length=50)  # Field name made lowercase.
@@ -19,12 +26,15 @@ class Competitions(models.Model):
     day = models.PositiveSmallIntegerField()
     endmonth = models.PositiveSmallIntegerField(db_column='endMonth')  # Field name made lowercase.
     endday = models.PositiveSmallIntegerField(db_column='endDay')  # Field name made lowercase.
-    eventspecs = models.CharField(db_column='eventSpecs', max_length=256, blank=True, null=True)  # Field name made lowercase.
+    eventspecs = models.CharField(db_column='eventSpecs', max_length=256, blank=True,
+                                  null=True)  # Field name made lowercase.
     wcadelegate = models.TextField(db_column='wcaDelegate', blank=True, null=True)  # Field name made lowercase.
     organiser = models.TextField(blank=True, null=True)
     venue = models.CharField(max_length=240)
-    venueaddress = models.CharField(db_column='venueAddress', max_length=120, blank=True, null=True)  # Field name made lowercase.
-    venuedetails = models.CharField(db_column='venueDetails', max_length=120, blank=True, null=True)  # Field name made lowercase.
+    venueaddress = models.CharField(db_column='venueAddress', max_length=120, blank=True,
+                                    null=True)  # Field name made lowercase.
+    venuedetails = models.CharField(db_column='venueDetails', max_length=120, blank=True,
+                                    null=True)  # Field name made lowercase.
     external_website = models.CharField(max_length=200, blank=True, null=True)
     cellname = models.CharField(db_column='cellName', max_length=45)  # Field name made lowercase.
     latitude = models.IntegerField(blank=True, null=True)
@@ -36,7 +46,7 @@ class Competitions(models.Model):
 
 
 class Continents(models.Model):
-    id = models.CharField(max_length=50,primary_key=True)
+    id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=50)
     recordname = models.CharField(db_column='recordName', max_length=3)  # Field name made lowercase.
     latitude = models.IntegerField()
@@ -49,7 +59,7 @@ class Continents(models.Model):
 
 
 class Countries(models.Model):
-    id = models.CharField(max_length=50,primary_key=True)
+    id = models.CharField(max_length=50, primary_key=True)
     name = models.CharField(max_length=50)
     continentid = models.CharField(db_column='continentId', max_length=50)  # Field name made lowercase.
     iso2 = models.CharField(max_length=2, blank=True, null=True)
@@ -60,7 +70,7 @@ class Countries(models.Model):
 
 
 class Events(models.Model):
-    id = models.CharField(max_length=6,primary_key=True)
+    id = models.CharField(max_length=6, primary_key=True)
     name = models.CharField(max_length=54)
     rank = models.IntegerField()
     format = models.CharField(max_length=10)
@@ -72,7 +82,7 @@ class Events(models.Model):
 
 
 class Formats(models.Model):
-    id = models.CharField(max_length=1,primary_key=True)
+    id = models.CharField(max_length=1, primary_key=True)
     name = models.CharField(max_length=50)
     sort_by = models.CharField(max_length=255)
     sort_by_second = models.CharField(max_length=255)
@@ -86,7 +96,7 @@ class Formats(models.Model):
 
 
 class Persons(models.Model):
-    id = models.CharField(max_length=10,primary_key=True)
+    id = models.CharField(max_length=10, primary_key=True)
     subid = models.IntegerField()
     name = models.CharField(max_length=80, blank=True, null=True)
     countryid = models.CharField(db_column='countryId', max_length=50)  # Field name made lowercase.
@@ -130,17 +140,21 @@ class Results(models.Model):
     pos = models.SmallIntegerField()
     best = models.IntegerField()
     average = models.IntegerField()
-    personname = models.CharField(db_column='personName', max_length=80, blank=True, null=True)  # Field name made lowercase.
+    personname = models.CharField(db_column='personName', max_length=80, blank=True,
+                                  null=True)  # Field name made lowercase.
     personid = models.CharField(db_column='personId', max_length=10)  # Field name made lowercase.
-    personcountryid = models.CharField(db_column='personCountryId', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    personcountryid = models.CharField(db_column='personCountryId', max_length=50, blank=True,
+                                       null=True)  # Field name made lowercase.
     formatid = models.CharField(db_column='formatId', max_length=1)  # Field name made lowercase.
     value1 = models.IntegerField()
     value2 = models.IntegerField()
     value3 = models.IntegerField()
     value4 = models.IntegerField()
     value5 = models.IntegerField()
-    regionalsinglerecord = models.CharField(db_column='regionalSingleRecord', max_length=3, blank=True, null=True)  # Field name made lowercase.
-    regionalaveragerecord = models.CharField(db_column='regionalAverageRecord', max_length=3, blank=True, null=True)  # Field name made lowercase.
+    regionalsinglerecord = models.CharField(db_column='regionalSingleRecord', max_length=3, blank=True,
+                                            null=True)  # Field name made lowercase.
+    regionalaveragerecord = models.CharField(db_column='regionalAverageRecord', max_length=3, blank=True,
+                                             null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -148,7 +162,7 @@ class Results(models.Model):
 
 
 class Roundtypes(models.Model):
-    id = models.CharField(max_length=1,primary_key=True)
+    id = models.CharField(max_length=1, primary_key=True)
     rank = models.IntegerField()
     name = models.CharField(max_length=50)
     cellname = models.CharField(db_column='cellName', max_length=45)  # Field name made lowercase.

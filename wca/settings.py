@@ -77,12 +77,29 @@ WSGI_APPLICATION = 'wca.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'WCA_django',
+        'USER': 'root',
+        'PASSWORD': '980910lz',
+        'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
+        'PORT': '62224'
+    },
+    'WCA_export1': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'WCA_export1',
+        'USER': 'root',
+        'PASSWORD': '980910lz',
+        'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
+        'PORT': '62224'
+    },
+    'WCA_export2': {
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'WCA_export2',
         'USER': 'root',
         'PASSWORD': '980910lz',
         'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
         'PORT': '62224'
     }
+
 }
 
 
