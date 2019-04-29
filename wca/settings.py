@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '980910lz',
         # 'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
-        'HOST': '10.66.100.32',
+        'HOST': '10.0.0.5',
         # 'PORT': '62224',
         'PORT': '3306'
     },
@@ -91,7 +91,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '980910lz',
         # 'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
-        'HOST': '10.66.100.32',
+        'HOST': '10.0.0.5',
         # 'PORT': '62224',
         'PORT': '3306'
     },
@@ -101,7 +101,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '980910lz',
         # 'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
-        'HOST': '10.66.100.32',
+        'HOST': '10.0.0.5',
         # 'PORT': '62224',
         'PORT': '3306'
     }
