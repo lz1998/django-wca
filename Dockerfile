@@ -6,7 +6,7 @@ MAINTAINER lz1998 875543533@qq.com
 RUN git clone https://github.com/lz1998/django-wca.git
 #下载django项目
 
-#RUN pip install -r /django-wca/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install -r /django-wca/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 #从阿里云镜像安装django所需模块
 
 EXPOSE 80
