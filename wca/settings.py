@@ -80,24 +80,30 @@ DATABASES = {
         'NAME': 'WCA_django',
         'USER': 'root',
         'PASSWORD': '980910lz',
-        'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
-        'PORT': '62224'
+        # 'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
+        'HOST': '10.66.100.32',
+        # 'PORT': '62224',
+        'PORT': '3306'
     },
     'WCA_export1': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'WCA_export1',
         'USER': 'root',
         'PASSWORD': '980910lz',
-        'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
-        'PORT': '62224'
+        # 'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
+        'HOST': '10.66.100.32',
+        # 'PORT': '62224',
+        'PORT': '3306'
     },
     'WCA_export2': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'WCA_export2',
         'USER': 'root',
         'PASSWORD': '980910lz',
-        'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
-        'PORT': '62224'
+        # 'HOST': 'gz-cdb-quik7q2x.sql.tencentcdb.com',
+        'HOST': '10.66.100.32',
+        # 'PORT': '62224',
+        'PORT': '3306'
     }
 
 }
