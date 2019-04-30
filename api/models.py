@@ -9,8 +9,8 @@ from django.db import models
 
 
 class KeyValue(models.Model):
-    key = models.CharField(max_length=50,primary_key=True)
-    value = models.CharField(max_length=50)
+    k = models.CharField(max_length=50,primary_key=True)
+    v = models.CharField(max_length=50)
 
     class Meta:
         db_table = 'key_value'

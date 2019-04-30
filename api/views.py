@@ -9,7 +9,7 @@ current_db = "WCA_export1"
 
 def get_current_db():
     global current_db
-    current_db = KeyValue.objects.get(key="current_db")
+    current_db = KeyValue.objects.get(k="current_db")
     return current_db
 
 
@@ -17,8 +17,8 @@ def set_current_db(db_name):
     global current_db
     current_db = db_name
 
-    result, created = KeyValue.objects.get_or_create(key="current_db")
-    result.value = db_name
+    result, created = KeyValue.objects.get_or_create(k="current_db")
+    result.v = db_name
     result.save()
 
 
