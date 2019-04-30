@@ -28,7 +28,7 @@ def getDB(request):
     }
     return JsonResponse(ret)
 
-def changeDB(request):
+def setDB(request):
     db_name = request.GET.get("db")
     set_current_db(db_name)
     ret = {
