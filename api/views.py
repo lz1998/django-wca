@@ -9,7 +9,7 @@ current_db = "WCA_export1"
 
 def get_current_db():
     global current_db
-    current_db = KeyValue.objects.get(k="current_db")
+    current_db = KeyValue.objects.get(k="current_db").v
     return current_db
 
 
