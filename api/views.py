@@ -21,6 +21,12 @@ def set_current_db(db_name):
     result.v = db_name
     result.save()
 
+def getDB(request):
+    ret = {
+        'status': 'ok',
+        'data':get_current_db()
+    }
+    return JsonResponse(ret)
 
 def changeDB(request):
     db_name = request.GET.get("db")
